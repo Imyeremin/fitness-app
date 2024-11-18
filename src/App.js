@@ -1,24 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+
+import Main from "./lkAdmin/pages/Main";
+import Layout from "./lkAdmin/components/Layout";
+import Castomers from "./lkAdmin/pages/Castomers";
+import Nutrition from "./lkAdmin/pages/Nutrition";
+
+import "bootstrap/dist/css/bootstrap.css";
+import Coaching from "./lkAdmin/pages/Coaching";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route Component={Layout}>
+          <Route path="/" Component={Main}/>
+          <Route path="/castomers" Component={Castomers}/>
+          <Route path="/nutrition" Component={Nutrition}/>
+          <Route path="/coaching" Component={Coaching}/>
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
