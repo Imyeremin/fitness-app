@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 
 import HeaderMenu from "./HeaderMenu";
-import image from "../images/Layout.jpeg";
+import image from "./images/Layout.jpeg";
 import MainMenu from "./MainMenu";
 import { Outlet } from "react-router-dom";
 

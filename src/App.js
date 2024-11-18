@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import Main from "./lkAdmin/pages/Main";
-import Layout from "./lkAdmin/components/Layout";
+import Layout from "./lkAdmin/components/layout/Layout";
 import Castomers from "./lkAdmin/pages/Castomers";
 import Nutrition from "./lkAdmin/pages/Nutrition";
 

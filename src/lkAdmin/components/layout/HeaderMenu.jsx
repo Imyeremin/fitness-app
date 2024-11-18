@@ -15,7 +15,7 @@ function HeaderMenu({ text, setHeader }) {
   return (
     <Navbar className="fixed-top" bg="dark" data-bs-theme="dark">
       <Container className="d-flex justify-content-between">
-        <Navbar.Brand as={Link} to="/">
+        <Navbar.Brand      >
           <Heading> {text}</Heading>
         </Navbar.Brand>
         <Nav>
