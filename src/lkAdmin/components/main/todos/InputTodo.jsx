@@ -2,19 +2,11 @@ import React from "react";
 import { Button, InputGroup, Form } from "react-bootstrap";
 import styled from "styled-components";
 
-const DivInput = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: rgba(0, 0, 0, 0.75);
-  padding: 20px;
-  border-bottom-right-radius: 18px;
-  border-bottom-left-radius: 18px;
-`;
+
 
 const InputTodo = () => {
   return (
-    <DivInput>
+ <>
       <div>
         <Button className="rounded-circle " variant="success">
           +
@@ -52,7 +44,7 @@ const InputTodo = () => {
           <Form.Control as="textarea" aria-label="With textarea" />
         </InputGroup>
       </div>
-    </DivInput>
+  </>
   );
 };
 
