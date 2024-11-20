@@ -12,8 +12,8 @@ const TodoItem = ({ todo }) => {
   const onCompleted = () => {
     if (comleted.opacity == "1") {
       setCompleted({
-        opacity: "0.5",
-        backgroundColor: " rgb(0, 138, 0)",
+        opacity: "0.9",
+        backgroundColor: " #198754",
         transition: "all 0.5s ease-in-out",
       });
       setDesc("");

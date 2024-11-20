@@ -3,7 +3,8 @@ import Button from "react-bootstrap/Button";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import icon from "./icon/chat.png";
 import iconChat from "./icon/chatSport.png";
-import { Card } from "react-bootstrap";
+import sms from './icon/sms.png'
+import { Card, InputGroup, Form } from "react-bootstrap";
 import SmsChat from "./SmsChat";
 
 import styles from "./test.module.css";
@@ -15,7 +16,7 @@ function FooterChat({ name, ...props }) {
   const handleClose = () => setShow(false);
   const handleShow = () => {
     setShow(true);
-    setNewSms(!styles)
+    setNewSms(!styles);
   };
 
   const smss = [
@@ -62,6 +63,14 @@ function FooterChat({ name, ...props }) {
             ))}
           </Card>
         </Offcanvas.Body>
+        <div className="d-flex">
+          <Button className="rounded-circle m-1 "  variant="outline-success">
+            <img src={sms} width="30px" height="30px" alt="" />
+          </Button>
+          <InputGroup className="m-1">
+            <Form.Control as="textarea" placeholder="What do you want to say?" aria-label="With textarea" />
+          </InputGroup>
+        </div>
       </Offcanvas>
     </>
   );
