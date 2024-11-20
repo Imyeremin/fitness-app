@@ -1,14 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import Todos from "../components/main/todos/Todos";
 import InputTodo from "../components/main/todos/InputTodo";
 import News from "../components/main/sportNews/News";
 import NewsList from "../components/main/sportNews/NewsList";
-
+import { useDispatch } from "react-redux";
+import addTodo from "../../store/todoSlise";
 const DivContainer = styled.div`
   color: white;
   overflow-y: scroll;
-  height: 65vh;
+  height: 50vh;
   padding: 30px;
 
   border: 1px solid black;
@@ -43,15 +44,22 @@ const FooterList = styled.div`
 
 const ContainerTodo = styled.div`
   width: 30%;
-`
+`;
 
 const ContainerNewsList = styled.div`
   width: 70%;
-  margin-left:50px;
-`
-
+  margin-left: 50px;
+`;
 
 const Main = () => {
+  const [todo, setTodo] = useState("");
+  const dispatch = useDispatch();
+
+  const addTask = () => {
+    dispatch(addTodo({ todo }));
+    setTodo("");
+  };
+
   return (
     <div className="d-flex">
       <ContainerTodo>
@@ -60,16 +68,16 @@ const Main = () => {
           <Todos />
         </DivContainer>
         <FooterList>
-          <InputTodo />
+          <InputTodo todo={todo} handleInput={setTodo} handleSubmit={addTask} />
         </FooterList>
       </ContainerTodo>
 
       <ContainerNewsList>
-        <HeaderList as={}>Sport News</HeaderList>
+        <HeaderList>Sport News</HeaderList>
         <DivContainer>
-          < NewsList/>
+          <NewsList />
         </DivContainer>
-        <FooterList/>
+        <FooterList />
       </ContainerNewsList>
     </div>
   );

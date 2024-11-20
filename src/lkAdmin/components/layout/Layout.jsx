@@ -5,7 +5,7 @@ import HeaderMenu from "./HeaderMenu";
 import image from "./images/Layout.jpeg";
 import MainMenu from "./MainMenu";
 import { Outlet } from "react-router-dom";
-
+import FooterChat from "../main/chat/FooterChat";
 
 const BgPage = styled.div`
   background-image: url(${image});
@@ -19,18 +19,17 @@ const Content = styled.div`
 `;
 
 const Layout = () => {
-
-  const [header, setHeader] = useState('Главная')
-
+  const [header, setHeader] = useState("Главная");
 
   return (
     <BgPage>
-      <HeaderMenu setHeader={setHeader} text={header}/> 
+      <HeaderMenu setHeader={setHeader} text={header} />
       <div className="d-flex h-100">
-        <MainMenu setHeader={setHeader}  />
+        <MainMenu setHeader={setHeader} />
         <Content>
           <Outlet />
         </Content>
+        <FooterChat />
       </div>
     </BgPage>
   );

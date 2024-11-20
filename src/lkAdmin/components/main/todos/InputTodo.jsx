@@ -1,14 +1,43 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button, InputGroup, Form } from "react-bootstrap";
+import { useDispatch } from "react-redux";
 import styled from "styled-components";
-
-
+import { addTodo} from "../../../../store/todoSlise";
 
 const InputTodo = () => {
+  const [data, setData] = useState({
+    task: "",
+    date: "",
+    desc: "",
+  });
+
+  const dispatch = useDispatch();
+
+  const handleChange = (value, key) => {
+    setData({
+      ...data,
+      [key]: value,
+    });
+  };
+
+  const onAddTask = () => {
+    dispatch(addTodo(data));
+    setData({
+      task: "",
+      date: "",
+      desc: "",
+    })
+  };
+
+
   return (
- <>
+    <>
       <div>
-        <Button className="rounded-circle " variant="success">
+        <Button
+          onClick={onAddTask}
+          className="rounded-circle "
+          variant="success"
+        >
           +
         </Button>
       </div>
@@ -21,6 +50,8 @@ const InputTodo = () => {
             Задача
           </InputGroup.Text>
           <Form.Control
+            value={data.task}
+            onChange={(e) => handleChange(e.target.value, "task")}
             aria-label="Small"
             aria-describedby="inputGroup-sizing-sm"
           />
@@ -33,6 +64,8 @@ const InputTodo = () => {
             Дата
           </InputGroup.Text>
           <Form.Control
+            value={data.date}
+            onChange={(e) => handleChange(e.target.value, "date")}
             aria-label="Small"
             aria-describedby="inputGroup-sizing-sm"
           />
@@ -41,10 +74,15 @@ const InputTodo = () => {
           <InputGroup.Text className="bg-secondary text-light">
             Описание
           </InputGroup.Text>
-          <Form.Control as="textarea" aria-label="With textarea" />
+          <Form.Control
+            value={data.desc}
+            onChange={(e) => handleChange(e.target.value, "desc")}
+            as="textarea"
+            aria-label="With textarea"
+          />
         </InputGroup>
       </div>
-  </>
+    </>
   );
 };
 

@@ -32,9 +32,9 @@ function MainMenu({setHeader, name, ...props }) {
           <Button onClick={() => onOpenPage("Питание")} as={Link} to='/nutrition'  className="p-3 m-1 fw-bold fs-5" variant="light">Питание</Button>
           <Button onClick={() => onOpenPage("Тренеровки")} as={Link} to='/coaching' className="p-3 fw-bold fs-5" variant="light">Тренеровки</Button>
           
-        </Offcanvas.Body>
+        </Offcanvas.Body> 
       </Offcanvas>
-    </>
+    </> 
   );
 }
 
