@@ -3,12 +3,13 @@ import Button from "react-bootstrap/Button";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import icon from "./icon/chat.png";
 import iconChat from "./icon/chatSport.png";
-import sms from './icon/sms.png'
+import sms from "./icon/sms.png";
 import { Card, InputGroup, Form } from "react-bootstrap";
 import SmsChat from "./SmsChat";
-
+import { addMessage } from "../../../../store/todoSlise";
 import styles from "./test.module.css";
 import "./test.module.css";
+import { useDispatch, useSelector } from "react-redux";
 
 function FooterChat({ name, ...props }) {
   const [show, setShow] = useState(false);
@@ -18,30 +19,26 @@ function FooterChat({ name, ...props }) {
     setShow(true);
     setNewSms(!styles);
   };
+  const [messages, setMessages] = useState("");
+  const [nameMessage, setNameMessage] = useState("");
+  const smss = useSelector((state) => state.todos.messages);
 
-  const smss = [
-    {
-      name: "Иванова Екатерина",
-      date: "10.10.2023 10:00",
-      text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum non voluptatem, porro repudiandae atque, est fugit libero eos facilis ullam ad nam doloribus facere quasi, eum nulla enim rerum? Laborum.",
-    },
-    {
-      name: "Иванова Екатерина",
-      date: "10.10.2023 10:00",
-      text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum non voluptatem, porro repudiandae atque, est fugit libero eos facilis ullam ad nam doloribus facere quasi, eum nulla enim rerum? Laborum.",
-    },
-    {
-      name: "Иванова Екатерина",
-      date: "10.10.2023 10:00",
-      text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum non voluptatem, porro repudiandae atque, est fugit libero eos facilis ullam ad nam doloribus facere quasi, eum nulla enim rerum? Laborum.",
-    },
-    {
-      name: "Иванова Екатерина",
-      date: "10.10.2023 10:00",
-      text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum non voluptatem, porro repudiandae atque, est fugit libero eos facilis ullam ad nam doloribus facere quasi, eum nulla enim rerum? Laborum.",
-    },
-  ]; // Тестовые данные
+  const dispatch = useDispatch();
 
+  const handleMassege = (value, key) => {
+    setMessages({
+      name: "Ваш тренер",
+      [key]: value,
+    });
+  };
+
+  const addMessageChat = () => {
+    dispatch(addMessage(messages));
+    setMessages({
+      name: "",
+      text: "",
+    });
+  };
   return (
     <>
       <Button variant="dark" onClick={handleShow} className={newSms.background}>
@@ -59,33 +56,31 @@ function FooterChat({ name, ...props }) {
         <Offcanvas.Body>
           <Card className="mb-1 p-3  text-light ">
             {smss.map((sms) => (
-              <SmsChat sms={sms} />
+              <SmsChat addNameMessage={handleMassege} addName={setNameMessage} key={sms.date} sms={sms} />
             ))}
           </Card>
         </Offcanvas.Body>
         <div className="d-flex">
-          <Button className="rounded-circle m-1 "  variant="outline-success">
+          <Button
+            onClick={addMessageChat}
+            className="rounded-circle m-1 "
+            variant="outline-success"
+          >
             <img src={sms} width="30px" height="30px" alt="" />
           </Button>
           <InputGroup className="m-1">
-            <Form.Control as="textarea" placeholder="What do you want to say?" aria-label="With textarea" />
+            <Form.Control
+              value={messages.text}
+              onChange={(e) => handleMassege(e.target.value, "text")}
+              as="textarea"
+              placeholder="What do you want to say?"
+              aria-label="With textarea"
+            />
           </InputGroup>
         </div>
       </Offcanvas>
     </>
   );
 }
-
-// function FooterChat() {
-//   return (
-//     <>
-//       {['start', 'end', 'top', 'bottom'].map((placement, idx) => (
-//         <OffCanvasExample key={idx} placement={placement} name={placement} />
-//       ))}
-//     </>
-//   );
-// }
-
-// render(<Footerchat />);
 
 export default FooterChat;

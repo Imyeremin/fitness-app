@@ -1,55 +1,11 @@
 import React from "react";
 import News from "./News";
+import { useSelector } from "react-redux";
 
+//https://newsapi.org/v2/top-headlines?country=us&apiKey=65f2e472dae349d7ba33233371dbfe15
 
 const NewsList = () => {
-  const newses = [
-    {
-      typeSport: "Футбол",
-      event: "Кто то забил гол.",
-      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio consequuntur quis porro aliquam ex numquam beatae assumenda atque harum quidem, consectetur quia provident doloribus omnis labore repudiandae tempora laborum? Molestias!",
-    },
-    {
-      typeSport: "Футбол",
-      event: "Кто то забил гол.",
-      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio consequuntur quis porro aliquam ex numquam beatae assumenda atque harum quidem, consectetur quia provident doloribus omnis labore repudiandae tempora laborum? Molestias!",
-    },
-    {
-      typeSport: "Футбол",
-      event: "Кто то забил гол.",
-      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio consequuntur quis porro aliquam ex numquam beatae assumenda atque harum quidem, consectetur quia provident doloribus omnis labore repudiandae tempora laborum? Molestias!",
-    },
-    {
-      typeSport: "Футбол",
-      event: "Кто то забил гол.",
-      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio consequuntur quis porro aliquam ex numquam beatae assumenda atque harum quidem, consectetur quia provident doloribus omnis labore repudiandae tempora laborum? Molestias!",
-    },
-    {
-      typeSport: "Футбол",
-      event: "Кто то забил гол.",
-      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio consequuntur quis porro aliquam ex numquam beatae assumenda atque harum quidem, consectetur quia provident doloribus omnis labore repudiandae tempora laborum? Molestias!",
-    },
-    {
-      typeSport: "Футбол",
-      event: "Кто то забил гол.",
-      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio consequuntur quis porro aliquam ex numquam beatae assumenda atque harum quidem, consectetur quia provident doloribus omnis labore repudiandae tempora laborum? Molestias!",
-    },
-    {
-      typeSport: "Футбол",
-      event: "Кто то забил гол.",
-      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio consequuntur quis porro aliquam ex numquam beatae assumenda atque harum quidem, consectetur quia provident doloribus omnis labore repudiandae tempora laborum? Molestias!",
-    },
-    {
-      typeSport: "Футбол",
-      event: "Кто то забил гол.",
-      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio consequuntur quis porro aliquam ex numquam beatae assumenda atque harum quidem, consectetur quia provident doloribus omnis labore repudiandae tempora laborum? Molestias!",
-    },
-    {
-      typeSport: "Футбол",
-      event: "Кто то забил гол.",
-      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio consequuntur quis porro aliquam ex numquam beatae assumenda atque harum quidem, consectetur quia provident doloribus omnis labore repudiandae tempora laborum? Molestias!",
-    },
-  ];// Тестовые данные
+  const newses = useSelector((state) => state.todos.news);
 
   return (
     <>

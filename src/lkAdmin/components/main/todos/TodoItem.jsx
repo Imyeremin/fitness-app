@@ -30,6 +30,9 @@ const TodoItem = ({ todo }) => {
 
   const onDeleteTask = (id) => {
     dispatch(deleteTodo(id));
+    setCompleted({
+      opacity: "1",
+    });
   };
 
   return (

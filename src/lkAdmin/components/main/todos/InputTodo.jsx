@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Button, InputGroup, Form } from "react-bootstrap";
 import { useDispatch } from "react-redux";
 import styled from "styled-components";
-import { addTodo} from "../../../../store/todoSlise";
+import { addTodo } from "../../../../store/todoSlise";
 
 const InputTodo = () => {
   const [data, setData] = useState({
@@ -26,9 +26,8 @@ const InputTodo = () => {
       task: "",
       date: "",
       desc: "",
-    })
+    });
   };
-
 
   return (
     <>

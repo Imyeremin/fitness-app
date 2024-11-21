@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import Todos from "../components/main/todos/Todos";
 import InputTodo from "../components/main/todos/InputTodo";
-import News from "../components/main/sportNews/News";
 import NewsList from "../components/main/sportNews/NewsList";
 import { useDispatch } from "react-redux";
 import addTodo from "../../store/todoSlise";
+import { fetchNews } from "../../store/todoSlise";
 const DivContainer = styled.div`
   color: white;
   overflow-y: scroll;
@@ -59,6 +59,10 @@ const Main = () => {
     dispatch(addTodo({ todo }));
     setTodo("");
   };
+
+  useEffect(() => {
+    dispatch(fetchNews());
+  }, []);
 
   return (
     <div className="d-flex">
