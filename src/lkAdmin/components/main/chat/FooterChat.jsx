@@ -6,7 +6,7 @@ import iconChat from "./icon/chatSport.png";
 import sms from "./icon/sms.png";
 import { Card, InputGroup, Form } from "react-bootstrap";
 import SmsChat from "./SmsChat";
-import { addMessage } from "../../../../store/todoSlise";
+import { addMessage } from "../../../../store/messageSlise";
 import styles from "./test.module.css";
 import "./test.module.css";
 import { useDispatch, useSelector } from "react-redux";
@@ -21,7 +21,7 @@ function FooterChat({ name, ...props }) {
   };
   const [messages, setMessages] = useState("");
   const [nameMessage, setNameMessage] = useState("");
-  const smss = useSelector((state) => state.todos.messages);
+  const smss = useSelector((state) => state.messages.messages);
 
   const dispatch = useDispatch();
 

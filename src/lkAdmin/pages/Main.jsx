@@ -5,7 +5,7 @@ import InputTodo from "../components/main/todos/InputTodo";
 import NewsList from "../components/main/sportNews/NewsList";
 import { useDispatch } from "react-redux";
 import addTodo from "../../store/todoSlise";
-import { fetchNews } from "../../store/todoSlise";
+import { fetchNews } from "../../store/newsSlise";
 const DivContainer = styled.div`
   color: white;
   overflow-y: scroll;
