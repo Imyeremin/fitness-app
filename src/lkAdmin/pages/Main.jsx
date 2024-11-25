@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from "react";
+import { useDispatch } from "react-redux";
+
 import styled from "styled-components";
+
 import Todos from "../components/main/todos/Todos";
 import InputTodo from "../components/main/todos/InputTodo";
 import NewsList from "../components/main/sportNews/NewsList";
-import { useDispatch } from "react-redux";
+
 import addTodo from "../../store/todoSlise";
 import { fetchNews } from "../../store/newsSlise";
-const DivContainer = styled.div`
+export const DivContainer = styled.div`
   color: white;
   overflow-y: scroll;
   height: 50vh;
@@ -18,7 +21,7 @@ const DivContainer = styled.div`
   -ms-overflow-style: none;
   scrollbar-width: none;
 `;
-const HeaderList = styled.div`
+export const HeaderList = styled.div`
   width: 100%;
 
   color: white;
@@ -32,7 +35,7 @@ const HeaderList = styled.div`
   border-top-left-radius: 18px;
   border-top-right-radius: 18px;
 `;
-const FooterList = styled.div`
+export const FooterList = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -41,12 +44,10 @@ const FooterList = styled.div`
   border-bottom-right-radius: 18px;
   border-bottom-left-radius: 18px;
 `;
-
-const ContainerTodo = styled.div`
+export const ContainerTodo = styled.div`
   width: 30%;
 `;
-
-const ContainerNewsList = styled.div`
+export const ContainerNewsList = styled.div`
   width: 70%;
   margin-left: 50px;
 `;

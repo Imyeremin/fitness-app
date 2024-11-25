@@ -1,13 +1,15 @@
 import React, { useState } from "react";
 import { Card, Button } from "react-bootstrap";
 import { useDispatch } from "react-redux";
-import { deleteTodo, toggleTodoComplete } from "../../../../store/todoSlise";
+import { deleteTodo } from "../../../../store/todoSlise";
 
 const TodoItem = ({ todo }) => {
   const [comleted, setCompleted] = useState({
     opacity: "1",
   });
   const [desc, setDesc] = useState(todo.desc);
+
+  const dispatch = useDispatch();
 
   const onCompleted = () => {
     if (comleted.opacity == "1") {
@@ -25,8 +27,6 @@ const TodoItem = ({ todo }) => {
       setDesc(todo.desc);
     }
   };
-
-  const dispatch = useDispatch();
 
   const onDeleteTask = (id) => {
     dispatch(deleteTodo(id));

@@ -1,8 +1,7 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
-
 const messagesSlice = createSlice({
-  name: "todo",
+  name: "messages",
   initialState: {
     messages: [
       {
@@ -33,6 +32,5 @@ const messagesSlice = createSlice({
 });
 
 export const { addMessage } = messagesSlice.actions;
-
 
 export default messagesSlice.reducer;

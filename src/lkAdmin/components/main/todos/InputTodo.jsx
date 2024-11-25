@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import { Button, InputGroup, Form } from "react-bootstrap";
 import { useDispatch } from "react-redux";
-import styled from "styled-components";
+
+import { Button, InputGroup, Form } from "react-bootstrap";
+
 import { addTodo } from "../../../../store/todoSlise";
 
 const InputTodo = () => {

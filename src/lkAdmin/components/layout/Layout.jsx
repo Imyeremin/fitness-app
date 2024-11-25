@@ -16,6 +16,7 @@ const BgPage = styled.div`
 `;
 const Content = styled.div`
   margin: 80px 50px;
+  width: 100%;
 `;
 
 const Layout = () => {

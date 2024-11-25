@@ -1,28 +1,32 @@
 import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+
+import SmsChat from "./SmsChat";
+import { Card, InputGroup, Form } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import Offcanvas from "react-bootstrap/Offcanvas";
+import styles from "./test.module.css";
+import "./test.module.css";
+
 import icon from "./icon/chat.png";
 import iconChat from "./icon/chatSport.png";
 import sms from "./icon/sms.png";
-import { Card, InputGroup, Form } from "react-bootstrap";
-import SmsChat from "./SmsChat";
+
 import { addMessage } from "../../../../store/messageSlise";
-import styles from "./test.module.css";
-import "./test.module.css";
-import { useDispatch, useSelector } from "react-redux";
 
 function FooterChat({ name, ...props }) {
   const [show, setShow] = useState(false);
   const [newSms, setNewSms] = useState(styles);
+  const [messages, setMessages] = useState("");
+  const [nameMessage, setNameMessage] = useState("");
+
   const handleClose = () => setShow(false);
   const handleShow = () => {
     setShow(true);
     setNewSms(!styles);
   };
-  const [messages, setMessages] = useState("");
-  const [nameMessage, setNameMessage] = useState("");
-  const smss = useSelector((state) => state.messages.messages);
 
+  const smss = useSelector((state) => state.messages.messages);
   const dispatch = useDispatch();
 
   const handleMassege = (value, key) => {
@@ -56,7 +60,12 @@ function FooterChat({ name, ...props }) {
         <Offcanvas.Body>
           <Card className="mb-1 p-3  text-light ">
             {smss.map((sms) => (
-              <SmsChat addNameMessage={handleMassege} addName={setNameMessage} key={sms.date} sms={sms} />
+              <SmsChat
+                addNameMessage={handleMassege}
+                addName={setNameMessage}
+                key={sms.date}
+                sms={sms}
+              />
             ))}
           </Card>
         </Offcanvas.Body>
