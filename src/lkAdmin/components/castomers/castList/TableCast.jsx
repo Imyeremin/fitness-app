@@ -1,11 +1,8 @@
-import Table from "react-bootstrap/Table";
-import { Button } from "react-bootstrap";
-import { useDispatch, useSelector } from "react-redux";
-import CastItem from "./CastItem";
-import { openCardCastomer } from "../../../../store/castomersSlise";
 
-function TableCast({castomers, onDataCard}) {
-//   const castomers = useSelector((state) => state.castomers.castomers);
+
+import CastItem from "./CastItem";
+
+function TableCast({ castomers, onDataCard }) {
   return (
     <table class="table-dark table rounded-3">
       <thead>

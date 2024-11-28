@@ -5,48 +5,50 @@ import TableCast from "../components/castomers/castList/TableCast";
 import styled from "styled-components";
 import CardCast from "../components/castomers/cstomerCard/CardCast";
 import { useSelector } from "react-redux";
+import AddWorkout from "../components/castomers/windowsAdd/windowWorkout/AddWorkout";
 
 const ContainerTableCast = styled.div`
   width: 60%;
-  height: 100%;
 `;
 const ContainerProfileCard = styled.div`
-  width: 30%;
+  width: 35%;
 `;
 const Castomers = () => {
   const castomers = useSelector((state) => state.castomers.castomers);
-  const [dataCard, setDataCard] = useState({
-    id: 1,
-    tel: "+79100000001",
-    name: "Иванова Екатерина",
-    age: 18,
-    height: 163,
-    weight: 65,
-    goal: "Похудеть к лету",
-    schedule: {
-      dayWeek: ["ПН", "ПН", "ПН"],
-      time: ["10:00", "12:30", "13:00"],
-    },
-  });
+  const [dataCard, setDataCard] = useState(castomers[0]);
+
+  const [openClose, setOpenClose] = useState('none')
 
   const onDataCard = (id) => {
-    setDataCard(castomers[--id]);
+    let castomer = castomers.find((x) => x.id === id);
+    setDataCard(castomer);
   };
 
+  const onOpenClose = () =>{
+    if(openClose === 'block'){
+      setOpenClose('none')
+    }else if(openClose === 'none'){
+      setOpenClose('block')
+    }
+  }
+
   return (
-    <div className="d-flex justify-content-between ">
-      <ContainerTableCast>
-        <HeaderList>Список клиентов</HeaderList>
-        <DivContainer>
-          <TableCast castomers={castomers} onDataCard={onDataCard} />
-        </DivContainer>
-        <FooterList></FooterList>
-      </ContainerTableCast>
-      <ContainerProfileCard>
-        <HeaderList>Profile</HeaderList>
-        <CardCast castomer={dataCard} />
-      </ContainerProfileCard>
-    </div>
+    <>
+      <AddWorkout castomer={dataCard} stateWind={openClose} openClose={onOpenClose}></AddWorkout>
+      <div className="d-flex justify-content-between ">
+        <ContainerTableCast>
+          <HeaderList>Список клиентов</HeaderList>
+          <DivContainer>
+            <TableCast castomers={castomers} onDataCard={onDataCard} />
+          </DivContainer>
+          <FooterList></FooterList>
+        </ContainerTableCast>
+        <ContainerProfileCard>
+          <HeaderList>Profile</HeaderList>
+          <CardCast  openClose={onOpenClose} castomer={dataCard} />
+        </ContainerProfileCard>
+      </div>
+    </>
   );
 };
 

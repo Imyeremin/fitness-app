@@ -1,10 +1,10 @@
 import React from "react";
 import { DivContainer, FooterList, HeaderList } from "./Main";
 import styled from "styled-components";
-import { useSelector } from "react-redux";
-import CardNutrition from "../components/nutrition/NutritionCard";
+import { useDispatch, useSelector } from "react-redux";
 import NutritionList from "../components/nutrition/NutritionList";
 import FormNewNutrition from "../components/nutrition/FormNewNutrition";
+import { deleteDish } from "../../store/nutritionSlise";
 
 const DivContainerNutritions = styled.div`
   width: 65%;
@@ -16,13 +16,17 @@ const DivAddNutrition = styled.div`
 
 const Nutrition = () => {
   const nutritions = useSelector((state) => state.nutritions.nutritions);
+  const dispatch = useDispatch();
 
+  const deleteNutrition = (id) => {
+    dispatch(deleteDish(id));
+  };
   return (
     <div className="d-flex justify-content-between ">
       <DivContainerNutritions>
         <HeaderList>Список блюд</HeaderList>
         <DivContainer>
-          <NutritionList nutritions={nutritions} />
+          <NutritionList onDeleteDish={deleteNutrition} nutritions={nutritions} />
         </DivContainer>
         <FooterList></FooterList>
       </DivContainerNutritions>

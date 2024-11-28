@@ -5,6 +5,7 @@ const nutritionsSlice = createSlice({
   initialState: {
     nutritions: [
       {
+        id: Math.random(),
         dish: "Гречневая каша с курицей",
         class: "Блюдо на обед",
         desc: "100 грамм куриной грудки обжарить без масла и сварить 150 грамм грамм гречневой каши.",
@@ -13,6 +14,7 @@ const nutritionsSlice = createSlice({
         U: 100,
       },
       {
+        id: Math.random(),
         dish: "Гречневая каша с курицей",
         class: "Блюдо на обед",
         desc: "100 грамм куриной грудки обжарить без масла и сварить 150 грамм грамм гречневой каши.",
@@ -21,6 +23,7 @@ const nutritionsSlice = createSlice({
         U: 100,
       },
       {
+        id: Math.random(),
         dish: "Гречневая каша с курицей",
         class: "Блюдо на обед",
         desc: "100 грамм куриной грудки обжарить без масла и сварить 150 грамм грамм гречневой каши.",
@@ -29,6 +32,7 @@ const nutritionsSlice = createSlice({
         U: 100,
       },
       {
+        id: Math.random(),
         dish: "Манная каша",
         class: "Блюдо на завтрак",
         desc: "200 грамм манной каши сварить на обезжиреном молоке.",
@@ -37,6 +41,7 @@ const nutritionsSlice = createSlice({
         U: 100,
       },
       {
+        id: Math.random(),
         dish: "Манная каша",
         class: "Блюдо на завтрак",
         desc: "200 грамм манной каши сварить на обезжиреном молоке.",
@@ -45,6 +50,7 @@ const nutritionsSlice = createSlice({
         U: 100,
       },
       {
+        id: Math.random(),
         dish: "Манная каша",
         class: "Блюдо на завтрак",
         desc: "200 грамм манной каши сварить на обезжиреном молоке.",
@@ -53,6 +59,7 @@ const nutritionsSlice = createSlice({
         U: 100,
       },
       {
+        id: Math.random(),
         dish: "Салат с курицей",
         class: "Блюдо на ужин",
         desc: "200 грамм овощей на выбор и сварить 100 грамм куриной грудки.",
@@ -62,6 +69,7 @@ const nutritionsSlice = createSlice({
       },
 
       {
+        id: Math.random(),
         dish: "Салат с курицей",
         class: "Блюдо на ужин",
         desc: "200 грамм овощей на выбор и сварить 100 грамм куриной грудки.",
@@ -70,6 +78,7 @@ const nutritionsSlice = createSlice({
         U: 100,
       },
       {
+        id: Math.random(),
         dish: "Салат с курицей",
         class: "Блюдо на ужин",
         desc: "200 грамм овощей на выбор и сварить 100 грамм куриной грудки.",
@@ -79,9 +88,21 @@ const nutritionsSlice = createSlice({
       },
     ],
   },
-  reducers: {},
+  reducers: {
+    addDish(state, action) {
+      state.nutritions.push({
+        ...action.payload,
+        id: Math.random(),
+      });
+    },
+    deleteDish(state, action) {
+      state.nutritions = state.nutritions.filter(
+        (dish) => dish.id !== action.payload
+      );
+    },
+  },
 });
 
-export const {} = nutritionsSlice.actions;
+export const { deleteDish, addDish } = nutritionsSlice.actions;
 
 export default nutritionsSlice.reducer;

@@ -7,11 +7,14 @@ const DivCardContainer = styled.div`
     flex-wrap: wrap;
 `
 
-const NutritionList = ({nutritions}) => {
+const NutritionList = ({nutritions, onDeleteDish}) => {
+
+
+
   return (
     <DivCardContainer>
       {nutritions.map((nutrition) => (
-          <CardNutrition dataDish={nutrition} />
+          <CardNutrition onDeleteDish={onDeleteDish} dataDish={nutrition} />
         ))}
     </DivCardContainer>
   )
