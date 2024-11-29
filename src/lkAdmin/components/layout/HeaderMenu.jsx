@@ -1,8 +1,10 @@
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import { Link } from "react-router-dom";
+
 import styled from "styled-components";
+
+import { Link } from "react-router-dom";
 
 function HeaderMenu({ text, setHeader }) {
   const Heading = styled.div`
@@ -15,14 +17,16 @@ function HeaderMenu({ text, setHeader }) {
   return (
     <Navbar className="fixed-top" bg="dark" data-bs-theme="dark">
       <Container className="d-flex justify-content-between">
-        <Navbar.Brand      >
+        <Navbar.Brand>
           <Heading> {text}</Heading>
         </Navbar.Brand>
         <Nav>
-          <Nav.Link onClick={() => setHeader('Главная')} as={Link} to="/">
+          <Nav.Link onClick={() => setHeader("Главная")} as={Link} to="/main">
             Главная
           </Nav.Link>
-          <Nav.Link>Выход</Nav.Link>
+          <Nav.Link as={Link} to="http://localhost:3001/">
+            Выход
+          </Nav.Link>
         </Nav>
       </Container>
     </Navbar>

@@ -1,9 +1,11 @@
-import Form from "react-bootstrap/Form";
-import { Button } from "react-bootstrap";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
+
+import Form from "react-bootstrap/Form";
+import { Button } from "react-bootstrap";
+
 import { addExercise } from "../../../store/coachingSlise";
-// Вот отсюда продолжать
+
 function FormAddExercise() {
   const dispatch = useDispatch();
   const [newExercise, setNewExercise] = useState({
@@ -33,13 +35,12 @@ function FormAddExercise() {
   };
   return (
     <>
-
       <Form.Group>
         <Form.Select
           onChange={(e) => updateNewExercise(e.target.value, "img")}
           aria-label="Default select example"
         >
-          <option >Группа мышц...</option>
+          <option>Группа мышц...</option>
           <option value="Ноги">Упражнение на руки</option>
           <option value="Руки">Упражнение на ноги</option>
           <option value="Спина">Упражнение на спину</option>

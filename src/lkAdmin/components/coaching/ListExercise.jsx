@@ -1,5 +1,7 @@
 import React from "react";
+
 import CardExercise from "./CardExercise";
+
 import styled from "styled-components";
 
 const DivCardContainer = styled.div`
@@ -19,4 +21,4 @@ const ListExercise = ({ exercises, onDeleteExercise }) => {
     </DivCardContainer>
   );
 };
- export default ListExercise;
+export default ListExercise;

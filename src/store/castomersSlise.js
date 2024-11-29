@@ -1,7 +1,5 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import imageKat from "./icon/profile.jpg";
-import imageAlex from "./icon/profile2.jpg";
-import imageUlia from "./icon/profile3.jpeg";
+
 const castomersSlice = createSlice({
   name: "castomers",
   initialState: {
@@ -29,7 +27,18 @@ const castomersSlice = createSlice({
             approaches: 4,
           },
         ],
-        diet: [],
+        diet: [
+          {
+            id: Math.random(),
+            dish: "Гречневая каша с курицей",
+            class: "Блюдо на обед",
+            desc: "100 грамм куриной грудки обжарить без масла и сварить 150 грамм грамм гречневой каши.",
+            B: 10,
+            J: 50,
+            U: 100,
+            variant: "primary",
+          },
+        ],
       },
       {
         id: Math.random(),
@@ -54,7 +63,18 @@ const castomersSlice = createSlice({
             approaches: 4,
           },
         ],
-        diet: [],
+        diet: [
+          {
+            id: Math.random(),
+            dish: "Гречневая каша с курицей",
+            class: "Блюдо на обед",
+            desc: "100 грамм куриной грудки обжарить без масла и сварить 150 грамм грамм гречневой каши.",
+            B: 10,
+            J: 50,
+            U: 100,
+            variant: "primary",
+          },
+        ],
       },
       {
         id: Math.random(),
@@ -79,43 +99,50 @@ const castomersSlice = createSlice({
             approaches: 4,
           },
         ],
-        diet: [],
+        diet: [
+          {
+            id: Math.random(),
+            dish: "Гречневая каша с курицей",
+            class: "Блюдо на обед",
+            desc: "100 грамм куриной грудки обжарить без масла и сварить 150 грамм грамм гречневой каши.",
+            B: 10,
+            J: 50,
+            U: 100,
+            variant: "primary",
+          },
+        ],
       },
     ],
   },
   reducers: {
     addWork(state, action) {
-      const test = state.castomers.indexOf(`{
-        id: Math.random(),
-        imgProf: "imageKat",
-        tel: "+79100000001",
-        name: "Иванова Екатерина",
-        age: 18,
-        height: 163,
-        weight: 65,
-        goal: "Похудеть к лету",
-        schedule: {
-          dayWeek: ["ВТ", "ЧТ", "СБ"],
-          time: ["9:00", "16:30", "20:00"],
-        },
-        workout: [
-          {
-            id: Math.random(),
-            img: "Спина",
-            exercise: "Жим",
-            desc: "Упражнение направлено на уселения мышц спины",
-            repetition: 12,
-            approaches: 4,
-          },
-        ],
-        diet: [],
-      }`)
-
-      console.log(test)
+      const cutomerId = action.payload.idCast;
+      const newWorkout = action.payload.dataWork;
+      const customer = state.castomers.find((x) => x.id === cutomerId);
+      customer.workout.push(newWorkout);
+    },
+    deleteWork(state, action) {
+      const customerId = action.payload.idCast;
+      const workId = action.payload.idWork;
+      const customer = state.castomers.find((x) => x.id === customerId);
+      customer.workout = customer.workout.filter((x) => x.id !== workId);
+    },
+    addNutrition(state, action) {
+      const cutomerId = action.payload.idCast;
+      const newNutrition = action.payload.dataNutrition;
+      const customer = state.castomers.find((x) => x.id === cutomerId);
+      customer.diet.push(newNutrition);
+    },
+    deleteNutrition(state, action) {
+      const customerId = action.payload.idCast;
+      const nutritionId = action.payload.idNutrition;
+      const customer = state.castomers.find((x) => x.id === customerId);
+      customer.diet = customer.diet.filter((x) => x.id !== nutritionId);
     },
   },
 });
 
-export const { addWork } = castomersSlice.actions;
+export const { addWork, deleteWork, addNutrition, deleteNutrition } =
+  castomersSlice.actions;
 
 export default castomersSlice.reducer;

@@ -1,7 +1,7 @@
 import ListGroup from "react-bootstrap/ListGroup";
 import styled from "styled-components";
 
-const DivListWorks = styled.div`
+const DivListNutrition = styled.div`
   width: 50%;
   margin: 20px;
   border-radius: 18px;
@@ -11,7 +11,7 @@ const DivListWorks = styled.div`
   height: 84%;
 `;
 
-const BtnWorks = styled.button`
+const BtnNutrition = styled.button`
   background-color: transparent;
   border: none;
   border-radius: 5px;
@@ -27,33 +27,38 @@ const BtnWorks = styled.button`
   }
 `;
 
-function WorksList({ exercises, castomer, addWorkData }) {
+function NutritionList({ nutritions, castomer, addNutritionData }) {
   return (
-    <DivListWorks>
+    <DivListNutrition>
       <ListGroup className="p-3 " as="ol" numbered>
-        {exercises.map((exercise) => (
+        {nutritions.map((diett) => (
           <ListGroup.Item
+            variant={diett.variant}
             as="li"
             className="d-flex justify-content-between align-items-center"
           >
             <div className="ms-2 me-auto">
-              <div className="fw-bold">{exercise.exercise}</div>
+              <div className="fs-6">{diett.class}</div>
+              <div className="fw-bold">{diett.dish}</div>
               <span>
-                Повторений: <b>{exercise.repetition}</b> |
+                Б: <b>{diett.B}</b> |
               </span>{" "}
               <span>
-                Подходов: <b>{exercise.approaches}</b> |
+                Ж: <b>{diett.J}</b> |
+              </span>
+              <span>
+                У: <b>{diett.U}</b> |
               </span>
             </div>
-            <BtnWorks onClick={() => addWorkData(castomer.id, exercise)}>
+            <BtnNutrition onClick={() => addNutritionData(castomer.id, diett)}>
               {" "}
               &#8658;
-            </BtnWorks>
+            </BtnNutrition>
           </ListGroup.Item>
         ))}
       </ListGroup>
-    </DivListWorks>
+    </DivListNutrition>
   );
 }
 
-export default WorksList;
+export default NutritionList;

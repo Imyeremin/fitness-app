@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+
 import Card from "react-bootstrap/Card";
 import { Button } from "react-bootstrap";
 
@@ -20,7 +21,6 @@ function CardNutrition({ dataDish, onDeleteDish }) {
   }, [dataDish]);
 
   return (
-   
     <Card
       text="white"
       border="dark"
@@ -36,7 +36,11 @@ function CardNutrition({ dataDish, onDeleteDish }) {
           Б: {dataDish.B}г.| Ж: {dataDish.J}г.| У: {dataDish.U}г.|
         </Card.Footer>
       </Card.Body>
-      <Button onClick={() => onDeleteDish(dataDish.id)} className="m-1" variant="dark">
+      <Button
+        onClick={() => onDeleteDish(dataDish.id)}
+        className="m-1"
+        variant="dark"
+      >
         Убрать из рациона
       </Button>
     </Card>

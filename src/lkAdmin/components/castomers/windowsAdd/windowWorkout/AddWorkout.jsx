@@ -1,11 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
+
 import styled from "styled-components";
+import { useDispatch, useSelector } from "react-redux";
+import { Button } from "react-bootstrap";
+
 import WorksList from "./WorksList";
 import AddWorksList from "./AddWorksList";
-import { HeaderList } from "../../../../pages/Main";
-import { Button } from "react-bootstrap";
-import { useDispatch, useSelector } from "react-redux";
+
 import { addWork } from "../../../../../store/castomersSlise";
+import { HeaderList } from "../../../../pages/Main";
 
 const DivAdd = styled.div`
   display: ${(props) => props.stateWind};
@@ -40,12 +43,15 @@ const DivContentAdd = styled.div`
 const AddWorkout = ({ stateWind, openClose, castomer }) => {
   const exercises = useSelector((state) => state.exercises.exercises);
 
-  const [dataAddWork, setDataAddWork] = useState([]);
   const dispatch = useDispatch();
-  
+
   const addWorkInCast = (idCast, dataWork) => {
-    setDataAddWork([{ idCast }, dataWork]);
-    dispatch(addWork(dataAddWork));
+    dispatch(
+      addWork({
+        idCast,
+        dataWork,
+      })
+    );
   };
 
   return (
@@ -55,7 +61,7 @@ const AddWorkout = ({ stateWind, openClose, castomer }) => {
           <HeaderList className="d-flex justify-content-between">
             <h3>Добавьте упражнения</h3>
             <Button onClick={openClose} variant="light">
-              &#10006;
+              &#9989;
             </Button>
           </HeaderList>
         </div>
@@ -67,9 +73,6 @@ const AddWorkout = ({ stateWind, openClose, castomer }) => {
           />
           <AddWorksList castomer={castomer} />
         </div>
-        <Button onClick={openClose} className="m-2" variant="primary">
-          Назначить
-        </Button>
       </DivContentAdd>
     </DivAdd>
   );

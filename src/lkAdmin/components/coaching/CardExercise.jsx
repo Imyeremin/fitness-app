@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import Card from "react-bootstrap/Card";
 import { Button } from "react-bootstrap";
-import legs from "./img/legs.png";
+
 import benchPress from "./img/benchPress.png";
 import back from "./img/back.png";
+import legs from "./img/legs.png";
 
 function CardExercise({ dataExercise, onDeleteExercise }) {
   const [picture, setPicture] = useState("");

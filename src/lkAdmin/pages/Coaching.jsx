@@ -1,6 +1,7 @@
 import React from "react";
 import { DivContainer, FooterList, HeaderList } from "./Main";
 import styled from "styled-components";
+
 import { useDispatch, useSelector } from "react-redux";
 
 import { deleteExercise } from "../../store/coachingSlise";
@@ -28,7 +29,10 @@ const Coaching = () => {
       <DivContainerExercise>
         <HeaderList>Упражнения</HeaderList>
         <DivContainer>
-          <ListExercise  exercises={exercises} onDeleteExercise={deleteExercises}  />
+          <ListExercise
+            exercises={exercises}
+            onDeleteExercise={deleteExercises}
+          />
         </DivContainer>
         <FooterList></FooterList>
       </DivContainerExercise>

@@ -12,6 +12,7 @@ const nutritionsSlice = createSlice({
         B: 10,
         J: 50,
         U: 100,
+        variant: "primary",
       },
       {
         id: Math.random(),
@@ -21,6 +22,7 @@ const nutritionsSlice = createSlice({
         B: 10,
         J: 50,
         U: 100,
+        variant: "primary",
       },
       {
         id: Math.random(),
@@ -30,6 +32,7 @@ const nutritionsSlice = createSlice({
         B: 10,
         J: 50,
         U: 100,
+        variant: "primary",
       },
       {
         id: Math.random(),
@@ -39,6 +42,7 @@ const nutritionsSlice = createSlice({
         B: 10,
         J: 50,
         U: 100,
+        variant: "success",
       },
       {
         id: Math.random(),
@@ -48,6 +52,7 @@ const nutritionsSlice = createSlice({
         B: 10,
         J: 50,
         U: 100,
+        variant: "success",
       },
       {
         id: Math.random(),
@@ -57,6 +62,7 @@ const nutritionsSlice = createSlice({
         B: 10,
         J: 50,
         U: 100,
+        variant: "success",
       },
       {
         id: Math.random(),
@@ -66,6 +72,7 @@ const nutritionsSlice = createSlice({
         B: 10,
         J: 50,
         U: 100,
+        variant: "danger",
       },
 
       {
@@ -76,6 +83,7 @@ const nutritionsSlice = createSlice({
         B: 10,
         J: 50,
         U: 100,
+        variant: "danger",
       },
       {
         id: Math.random(),
@@ -85,6 +93,7 @@ const nutritionsSlice = createSlice({
         B: 10,
         J: 50,
         U: 100,
+        variant: "danger",
       },
     ],
   },

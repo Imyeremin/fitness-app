@@ -1,11 +1,14 @@
 import React, { useState } from "react";
 
-import { DivContainer, FooterList, HeaderList } from "./Main";
-import TableCast from "../components/castomers/castList/TableCast";
-import styled from "styled-components";
-import CardCast from "../components/castomers/cstomerCard/CardCast";
 import { useSelector } from "react-redux";
+
+import styled from "styled-components";
+import { DivContainer, FooterList, HeaderList } from "./Main";
+
+import TableCast from "../components/castomers/castList/TableCast";
+import CardCast from "../components/castomers/cstomerCard/CardCast";
 import AddWorkout from "../components/castomers/windowsAdd/windowWorkout/AddWorkout";
+import AddNutrition from "../components/castomers/windowsAdd/windowNutrition/AddNutrition";
 
 const ContainerTableCast = styled.div`
   width: 60%;
@@ -15,26 +18,41 @@ const ContainerProfileCard = styled.div`
 `;
 const Castomers = () => {
   const castomers = useSelector((state) => state.castomers.castomers);
-  const [dataCard, setDataCard] = useState(castomers[0]);
-
-  const [openClose, setOpenClose] = useState('none')
-
+  const [selectedCustomer, setSelectedCustomer] = useState(0);
+  const [openClose, setOpenClose] = useState("none");
+  const [openCloseNutrition, setOpenCloseNutrition] = useState("none");
   const onDataCard = (id) => {
-    let castomer = castomers.find((x) => x.id === id);
-    setDataCard(castomer);
+    let castomerNum = castomers.findIndex((x) => x.id === id);
+    setSelectedCustomer(castomerNum);
   };
 
-  const onOpenClose = () =>{
-    if(openClose === 'block'){
-      setOpenClose('none')
-    }else if(openClose === 'none'){
-      setOpenClose('block')
+  const onOpenClose = () => {
+    if (openClose === "block") {
+      setOpenClose("none");
+    } else if (openClose === "none") {
+      setOpenClose("block");
     }
-  }
+  };
+  const onOpenCloseNutrition = () => {
+    if (openCloseNutrition === "block") {
+      setOpenCloseNutrition("none");
+    } else if (openCloseNutrition === "none") {
+      setOpenCloseNutrition("block");
+    }
+  };
 
   return (
     <>
-      <AddWorkout castomer={dataCard} stateWind={openClose} openClose={onOpenClose}></AddWorkout>
+      <AddNutrition
+        castomer={castomers[selectedCustomer]}
+        stateWind={openCloseNutrition}
+        openClose={onOpenCloseNutrition}
+      ></AddNutrition>
+      <AddWorkout
+        castomer={castomers[selectedCustomer]}
+        stateWind={openClose}
+        openClose={onOpenClose}
+      ></AddWorkout>
       <div className="d-flex justify-content-between ">
         <ContainerTableCast>
           <HeaderList>Список клиентов</HeaderList>
@@ -45,7 +63,11 @@ const Castomers = () => {
         </ContainerTableCast>
         <ContainerProfileCard>
           <HeaderList>Profile</HeaderList>
-          <CardCast  openClose={onOpenClose} castomer={dataCard} />
+          <CardCast
+            openCloseWork={onOpenClose}
+            openCloseNutriion={onOpenCloseNutrition}
+            castomer={castomers[selectedCustomer]}
+          />
         </ContainerProfileCard>
       </div>
     </>

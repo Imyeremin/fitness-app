@@ -1,11 +1,11 @@
 import ListGroup from "react-bootstrap/ListGroup";
-import { useDispatch } from "react-redux";
-
 import styled from "styled-components";
 
-import { deleteWork } from "../../../../../store/castomersSlise";
+import { useDispatch } from "react-redux";
 
-const DivListWorks = styled.div`
+import { deleteNutrition } from "../../../../../store/castomersSlise";
+
+const DivListNut = styled.div`
   width: 50%;
   margin: 20px;
   border-radius: 18px;
@@ -15,7 +15,7 @@ const DivListWorks = styled.div`
   height: 84%;
 `;
 
-const BtnWorks = styled.button`
+const BtnNut = styled.button`
   background-color: transparent;
   border: none;
   border-radius: 5px;
@@ -31,44 +31,49 @@ const BtnWorks = styled.button`
   }
 `;
 
-function AddWorksList({ castomer }) {
+function AddNutritionList({ castomer }) {
   const dispatch = useDispatch();
 
-  const onDeleteWork = (idCast, idWork) => {
+  const onDeleteNutrition = (idCast, idNutrition) => {
     dispatch(
-      deleteWork({
+      deleteNutrition({
         idCast,
-        idWork,
+        idNutrition,
       })
     );
   };
 
   return (
-    <DivListWorks>
+    <DivListNut>
       <ListGroup className="p-3 " as="ol" numbered>
-        {castomer.workout.map((workout) => (
+        {castomer.diet.map((diett) => (
           <ListGroup.Item
+            variant={diett.variant}
             as="li"
             className="d-flex justify-content-between align-items-center"
           >
             <div className="ms-2 me-auto">
-              <div className="fw-bold">{workout.exercise}</div>
+              <div className="fs-6">{diett.class}</div>
+              <div className="fw-bold">{diett.dish}</div>
               <span>
-                Повторений: <b>{workout.repetition}</b> |
+                Б: <b>{diett.B}</b> |
               </span>{" "}
               <span>
-                Подходов: <b>{workout.approaches}</b> |
+                Ж: <b>{diett.J}</b> |
+              </span>
+              <span>
+                У: <b>{diett.U}</b> |
               </span>
             </div>
-            <BtnWorks onClick={() => onDeleteWork(castomer.id, workout.id)}>
+            <BtnNut onClick={() => onDeleteNutrition(castomer.id, diett.id)}>
               {" "}
               &#8658;
-            </BtnWorks>
+            </BtnNut>
           </ListGroup.Item>
         ))}
       </ListGroup>
-    </DivListWorks>
+    </DivListNut>
   );
 }
 
-export default AddWorksList;
+export default AddNutritionList;

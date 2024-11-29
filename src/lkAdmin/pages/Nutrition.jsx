@@ -1,7 +1,9 @@
 import React from "react";
 import { DivContainer, FooterList, HeaderList } from "./Main";
 import styled from "styled-components";
+
 import { useDispatch, useSelector } from "react-redux";
+
 import NutritionList from "../components/nutrition/NutritionList";
 import FormNewNutrition from "../components/nutrition/FormNewNutrition";
 import { deleteDish } from "../../store/nutritionSlise";
@@ -26,7 +28,10 @@ const Nutrition = () => {
       <DivContainerNutritions>
         <HeaderList>Список блюд</HeaderList>
         <DivContainer>
-          <NutritionList onDeleteDish={deleteNutrition} nutritions={nutritions} />
+          <NutritionList
+            onDeleteDish={deleteNutrition}
+            nutritions={nutritions}
+          />
         </DivContainer>
         <FooterList></FooterList>
       </DivContainerNutritions>

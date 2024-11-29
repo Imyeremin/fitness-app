@@ -1,5 +1,3 @@
-
-
 import CastItem from "./CastItem";
 
 function TableCast({ castomers, onDataCard }) {

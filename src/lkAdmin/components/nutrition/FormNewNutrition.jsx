@@ -1,7 +1,9 @@
 import Form from "react-bootstrap/Form";
 import { Button } from "react-bootstrap";
+
 import { useState } from "react";
 import { useDispatch } from "react-redux";
+
 import { addDish } from "../../../store/nutritionSlise";
 
 function FormNewNutrition() {
@@ -36,8 +38,7 @@ function FormNewNutrition() {
   return (
     <>
       <Form.Group>
-        <Form.Select 
-        
+        <Form.Select
           onChange={(e) => updateNewDish(e.target.value, "class")}
           aria-label="Default select example"
         >

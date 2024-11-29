@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 
-import HeaderMenu from "./HeaderMenu";
-import image from "./images/Layout.jpeg";
-import MainMenu from "./MainMenu";
 import { Outlet } from "react-router-dom";
+
+import MainMenu from "./MainMenu";
 import FooterChat from "../main/chat/FooterChat";
+import HeaderMenu from "./HeaderMenu";
+
+import image from "./images/Layout.jpeg";
 
 const BgPage = styled.div`
   background-image: url(${image});
