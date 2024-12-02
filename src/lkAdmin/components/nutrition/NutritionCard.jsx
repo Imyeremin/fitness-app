@@ -7,11 +7,11 @@ function CardNutrition({ dataDish, onDeleteDish }) {
   const [color, setColor] = useState("");
 
   const UpdateColor = (classNut) => {
-    if (classNut == "Блюдо на завтрак") {
+    if (classNut === "Блюдо на завтрак") {
       setColor("success");
-    } else if (classNut == "Блюдо на обед") {
+    } else if (classNut === "Блюдо на обед") {
       setColor("primary");
-    } else if (classNut == "Блюдо на ужин") {
+    } else if (classNut === "Блюдо на ужин") {
       setColor("danger");
     }
   };

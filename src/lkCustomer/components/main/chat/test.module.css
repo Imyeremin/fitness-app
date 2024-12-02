@@ -1,0 +1,125 @@
+@property --g-1 {
+    syntax: "<percentage>";
+    inherits: false;
+    initial-value: 0%;
+}
+
+@property --g-2 {
+    syntax: "<percentage>";
+    inherits: false;
+    initial-value: 98.99%;
+}
+
+@property --g-3 {
+    syntax: "<percentage>";
+    inherits: false;
+    initial-value: 205.8%;
+}
+
+@property --g-4 {
+    syntax: "<percentage>";
+    inherits: false;
+    initial-value: 304.79%;
+}
+
+@property --g-5 {
+    syntax: "<percentage>";
+    inherits: false;
+    initial-value: 401.18%;
+}
+
+@property --g-6 {
+    syntax: "<percentage>";
+    inherits: false;
+    initial-value: 500.17%;
+}
+
+.background {
+    box-shadow: 1px 0px 50px 0px rgb(207, 207, 207);
+    border: 2px solid #495057;
+    background: linear-gradient(90deg, #343a40 var(--g-1), #212529 var(--g-2), #495057 var(--g-3), #495057 var(--g-4), #343a40 var(--g-5), #212529 var(--g-6));
+    animation: background-animation 5s linear 0s infinite;
+}
+
+@keyframes background-animation {
+    0% {
+        --g-1: 0%;
+        --g-2: 98.99%;
+        --g-3: 205.8%;
+        --g-4: 304.79%;
+        --g-5: 401.18%;
+        --g-6: 500.17%;
+    }
+
+    10% {
+        --g-1: -99.97%;
+        --g-2: -0.94%;
+        --g-3: 105.91%;
+        --g-4: 204.93%;
+        --g-5: 301.35%;
+        --g-6: 400.38%;
+    }
+
+    20% {
+        --g-1: -200.03%;
+        --g-2: -101.07%;
+        --g-3: 5.71%;
+        --g-4: 104.67%;
+        --g-5: 201.03%;
+        --g-6: 300%;
+    }
+
+    30% {
+        --g-1: -300.03%;
+        --g-2: -200.86%;
+        --g-3: -93.85%;
+        --g-4: 5.33%;
+        --g-5: 101.9%;
+        --g-6: 201.08%;
+    }
+
+    40% {
+        --g-1: -400.1%;
+        --g-2: -301.13%;
+        --g-3: -194.33%;
+        --g-4: -95.35%;
+        --g-5: 1.02%;
+        --g-6: 100%;
+    }
+
+    50% {
+        --g-1: -300.03%;
+        --g-2: -200.86%;
+        --g-3: -93.85%;
+        --g-4: 5.33%;
+        --g-5: 101.9%;
+        --g-6: 201.08%;
+    }
+
+    80% {
+        --g-1: -200.03%;
+        --g-2: -101.07%;
+        --g-3: 5.71%;
+        --g-4: 104.67%;
+        --g-5: 201.03%;
+        --g-6: 300%;
+    }
+
+    90% {
+        --g-1: -99.97%;
+        --g-2: -0.94%;
+        --g-3: 105.91%;
+        --g-4: 204.93%;
+        --g-5: 301.35%;
+        --g-6: 400.38%;
+    }
+
+    100% {
+        --g-1: 0%;
+        --g-2: 98.99%;
+        --g-3: 205.8%;
+        --g-4: 304.79%;
+        --g-5: 401.18%;
+        --g-6: 500.17%;
+    }
+}
