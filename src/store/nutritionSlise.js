@@ -74,7 +74,6 @@ const nutritionsSlice = createSlice({
         U: 100,
         variant: "danger",
       },
-
       {
         id: Math.random(),
         dish: "Салат с курицей",

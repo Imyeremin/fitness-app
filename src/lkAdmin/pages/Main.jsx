@@ -11,7 +11,6 @@ import addTodo from "../../store/todoSlise";
 import { fetchNews } from "../../store/newsSlise";
 export const DivContainer = styled.div`
   color: white;
-  overflow-y: scroll;
   height: 50vh;
   padding: 30px;
 
@@ -20,6 +19,7 @@ export const DivContainer = styled.div`
   overflow: auto;
   -ms-overflow-style: none;
   scrollbar-width: none;
+  overflow-y: scroll;
 `;
 export const HeaderList = styled.div`
   width: 100%;

@@ -1,14 +1,11 @@
-import React from 'react'
-import ProfileCard from '../components/main/ProfileCard'
-import { useSelector } from 'react-redux'
+import React from "react";
+import { useSelector } from "react-redux";
+import ProfileCard from "../components/main/ProfileCard";
 
 const MainPage = () => {
+  const customer = useSelector((state) => state.castomers.castomers);
 
-    const customer = useSelector(state => state.castomers.castomers)
+  return <ProfileCard data={customer[0]} />;
+};
 
-  return (
-    <ProfileCard data={customer[0]}/>
-  )
-}
-
-export default MainPage
+export default MainPage;

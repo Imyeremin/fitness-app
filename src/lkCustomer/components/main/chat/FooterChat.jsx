@@ -31,7 +31,7 @@ function FooterChat({ name, ...props }) {
 
   const handleMassege = (value, key) => {
     setMessages({
-      name: "Ваш тренер",
+      name: "Иванова Екатерина",
       [key]: value,
     });
   };

@@ -8,22 +8,22 @@ import Nutrition from "./lkAdmin/pages/Nutrition";
 import Coaching from "./lkAdmin/pages/Coaching";
 
 import MainPage from "./lkCustomer/pages/MainPage";
-import LayoutCust from './lkCustomer/components/layout/LayoutCust';
+import LayoutCust from "./lkCustomer/components/layout/LayoutCust";
 
 function App() {
   return (
     <BrowserRouter>
-      {/* <Routes>
+      <Routes>
         <Route Component={Layout}>
           <Route path="/main" Component={Main} />
           <Route path="/castomers" Component={Castomers} />
           <Route path="/nutrition" Component={Nutrition} />
           <Route path="/coaching" Component={Coaching} />
         </Route>
-      </Routes> */}
+      </Routes>
       <Routes>
         <Route Component={LayoutCust}>
-          <Route path="/custmain" Component={MainPage}/>
+          <Route path="/custmain" Component={MainPage} />
           <Route />
           <Route />
           <Route />
