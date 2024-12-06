@@ -5,6 +5,7 @@ import messageSlise from "./messageSlise";
 import castomersSlice from "./castomersSlise";
 import nutritionSlise from "./nutritionSlise";
 import coachingSlice from "./coachingSlise";
+import resaultSlice from "./resaultSlise";
 
 export default configureStore({
   reducer: {
@@ -14,5 +15,6 @@ export default configureStore({
     castomers: castomersSlice,
     nutritions: nutritionSlise,
     exercises: coachingSlice,
+    resault: resaultSlice,
   },
 });

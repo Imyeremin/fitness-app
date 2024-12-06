@@ -5,7 +5,7 @@ const castomersSlice = createSlice({
   initialState: {
     castomers: [
       {
-        id: Math.random(),
+        id: 0,
         email: "customer@email.ru",
         imgProf: "imageKat",
         tel: "+79100000001",
@@ -78,7 +78,7 @@ const castomersSlice = createSlice({
         ],
       },
       {
-        id: Math.random(),
+        id: 1,
         email: "customer@email.ru",
         imgProf: "imageUlia",
         tel: "+79100000001",
@@ -151,7 +151,7 @@ const castomersSlice = createSlice({
         ],
       },
       {
-        id: Math.random(),
+        id: 2,
         email: "customer@email.ru",
         imgProf: "imageAlex",
         tel: "+79100000001",

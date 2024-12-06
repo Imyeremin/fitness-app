@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 
 import { Container, Card, Button, Accordion, Table } from "react-bootstrap";
+
 import styled from "styled-components";
 
 import test from "./../../../store/icon/profile.jpg";
@@ -9,6 +10,8 @@ import test from "./../../../store/icon/profile.jpg";
 import WorkCard from "./workCard/WorkCard";
 import NutriCard from "./nutrotionCard/NutriCard";
 import UpdateProfile from "./UpdateProfile";
+import { Link } from "react-router-dom";
+
 
 // Фон с градиентом
 const GradientBackground = styled.div`
@@ -113,7 +116,9 @@ function ProfileCard({ data }) {
                 +1-844-699-4678{" "}
                 <span style={{ color: "red" }}>Not Available</span>
               </p>
-              <GradientButton className="mt-2">Поехали!</GradientButton>
+              <Button as={Link} to="/time" variant="danger" className="mt-2">
+                Поехали!
+              </Button>
             </Card.Body>
           </StyledCard>
 

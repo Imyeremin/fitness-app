@@ -9,13 +9,14 @@ import Coaching from "./lkAdmin/pages/Coaching";
 
 import MainPage from "./lkCustomer/pages/MainPage";
 import LayoutCust from "./lkCustomer/components/layout/LayoutCust";
+import Timer from "./lkCustomer/components/main/workTime/Timer";
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route Component={Layout}>
-          <Route path="/main" Component={Main} />
+          <Route path="/" Component={Main} />
           <Route path="/castomers" Component={Castomers} />
           <Route path="/nutrition" Component={Nutrition} />
           <Route path="/coaching" Component={Coaching} />
@@ -26,8 +27,8 @@ function App() {
           <Route path="/custmain" Component={MainPage} />
           <Route />
           <Route />
-          <Route />
         </Route>
+        <Route path="/time" Component={Timer} />
       </Routes>
     </BrowserRouter>
   );

@@ -5,12 +5,12 @@ import News from "./News";
 import { useSelector } from "react-redux";
 
 const NewsList = () => {
-  const newses = useSelector((state) => state.news.news);
+  const resault = useSelector((state) => state.resault.resault);
 
   return (
     <>
-      {newses.map((news) => (
-        <News news={news} />
+      {resault.map((res) => (
+        <News res={res} />
       ))}
     </>
   );

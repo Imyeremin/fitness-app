@@ -13,6 +13,14 @@ import iconChat from "./icon/chatSport.png";
 import sms from "./icon/sms.png";
 
 import { addMessage } from "../../../../store/messageSlise";
+import styled from "styled-components";
+
+const BtnChat = styled.button`
+z-index: 2;
+ height: 100vh;
+  background-color: #2a2d3e;
+  color: #ffffff;
+`;
 
 function FooterChat({ name, ...props }) {
   const [show, setShow] = useState(false);
@@ -45,11 +53,18 @@ function FooterChat({ name, ...props }) {
   };
   return (
     <>
-      <Button variant="dark" onClick={handleShow} className={newSms.background}>
+      <BtnChat onClick={handleShow} className={newSms.background}>
         <img src={icon} alt="" width="50px" height="50px" />
-        <div><b>Chat</b></div>
-      </Button>
-      <Offcanvas variant='dark' show={show} onHide={handleClose} placement="start">
+        <div>
+          <b>Chat</b>
+        </div>
+      </BtnChat>
+      <Offcanvas
+        variant="dark"
+        show={show}
+        onHide={handleClose}
+        placement="start"
+      >
         <Offcanvas.Header closeButton>
           <Offcanvas.Title>
             <div>

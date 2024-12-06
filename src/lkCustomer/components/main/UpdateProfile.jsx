@@ -3,6 +3,7 @@ import { Table, Form } from "react-bootstrap";
 import test from "./../../../store/icon/profile.jpg";
 import styled from "styled-components";
 import { Button } from "react-bootstrap";
+import { useState } from "react";
 
 const GradientButton = styled(Button)`
   background: linear-gradient(45deg, #6a92ff, #8ba6ff);
@@ -22,11 +23,44 @@ function UpdateProfile({ name, show, handleClose, data, ...props }) {
   const UpdateClose = () => {
     handleClose();
   };
+  const [dayWeek, setDayWeek] = useState()
+  const [upData, setUpData] = useState({
+    email: "",
+    imgProf: "",
+    tel: "",
+    name: "",
+    age: "",
+    height: "",
+    weight: "",
+    goal: "",
+    schedule: {
+      dayWeek: "",
+      time: "",
+    },
+  });
+
+  const onDataClick = () => {
+    setUpData();
+  };
 
   return (
+    // {
+    //   id: 0,
+    //   email: "customer@email.ru",
+    //   imgProf: "imageKat",
+    //   tel: "+79100000001",
+    //   name: "Иванова Екатерина",
+    //   age: 18,
+    //   height: 163,
+    //   weight: 65,
+    //   goal: "Похудеть к лету",
+    //   schedule: {
+    //     dayWeek: ["ВТ", "ЧТ", "СБ"],
+    //     time: ["9:00", "16:30", "20:00"],
+    //   },
     <>
       <Offcanvas
-        variant='light'
+        variant="light"
         show={show}
         onHide={handleClose}
         placement="end"

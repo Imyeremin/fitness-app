@@ -21,7 +21,7 @@ function HeaderMenu({ text, setHeader }) {
           <Heading> {text}</Heading>
         </Navbar.Brand>
         <Nav>
-          <Nav.Link onClick={() => setHeader("Главная")} as={Link} to="/main">
+          <Nav.Link onClick={() => setHeader("Главная")} as={Link} to="/">
             Главная
           </Nav.Link>
           <Nav.Link as={Link} to="http://localhost:3001/">

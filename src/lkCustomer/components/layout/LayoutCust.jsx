@@ -8,7 +8,6 @@ import HeaderMenu from "./HeaderMenu";
 
 import image from "./images/fon.jpg";
 
-
 const BgPage = styled.div`
   background-image: url(${image});
   background-repeat: no-repeat;
@@ -31,11 +30,14 @@ const Layout = () => {
   return (
     <BgPage>
       <HeaderMenu setHeader={setHeader} text={header} />
-      <div className="d-flex h-100">
-        {" "}
+      <div className="d-flex ">
+      
         <FooterChat />
         <Content>
+        <div>
+        
           <Outlet />
+        </div>
         </Content>
       </div>
     </BgPage>

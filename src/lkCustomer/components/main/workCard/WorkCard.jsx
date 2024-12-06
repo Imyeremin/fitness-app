@@ -11,7 +11,7 @@ const WorkCard = ({ dataWork }) => {
             <b>{dataWork.exercise}</b> - {dataWork.desc}
           </p>
           <footer className="blockquote-footer">
-            Повторний:{" "}
+            Повторний:
             <cite title="Source Title">{dataWork.repetition} | </cite>
             Подходов: <cite title="Source Title">{dataWork.approaches}</cite>
           </footer>
