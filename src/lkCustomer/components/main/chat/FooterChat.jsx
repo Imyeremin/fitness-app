@@ -16,8 +16,8 @@ import { addMessage } from "../../../../store/messageSlise";
 import styled from "styled-components";
 
 const BtnChat = styled.button`
-z-index: 2;
- height: 100vh;
+  z-index: 2;
+  height: 100vh;
   background-color: #2a2d3e;
   color: #ffffff;
 `;

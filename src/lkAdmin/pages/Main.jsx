@@ -78,7 +78,7 @@ const Main = () => {
       </ContainerTodo>
 
       <ContainerNewsList>
-        <HeaderList>Sport News</HeaderList>
+        <HeaderList>Training Results</HeaderList>
         <DivContainer>
           <NewsList />
         </DivContainer>

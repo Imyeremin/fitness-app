@@ -10,13 +10,13 @@ import { addRes } from "../../../../store/resaultSlise";
 
 const TimerWrapper = styled.video`
   position: absolute;
-  width: 100%;
+ width: auto;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
   z-index: 1;
-  height: 100%;
+  height:auto;
 `;
 
 const GlassCard = styled.div`
@@ -121,7 +121,7 @@ const Timer = () => {
   };
 
   return (
-    <>
+    <div className="h-auto">
       <TimerWrapper className="videoTag" autoPlay loop>
         <source src={bg} type="video/mp4" />
       </TimerWrapper>
@@ -158,7 +158,7 @@ const Timer = () => {
           </div>{" "}
         </GlassCard>
       </DivContainer>
-    </>
+    </div>
   );
 };
 
