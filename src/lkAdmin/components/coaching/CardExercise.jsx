@@ -37,7 +37,7 @@ function CardExercise({ dataExercise, onDeleteExercise }) {
           <Card.Title>{dataExercise.exercise}</Card.Title>
           <Card.Text>{dataExercise.desc}</Card.Text>
           <Card.Footer>
-            Количество повторений: <b>{dataExercise.repetition}</b> | Подходов:{" "}
+            Количество повторений: <b>{dataExercise.repetition}</b> | Подходов:
             <b>{dataExercise.approaches}</b>
           </Card.Footer>
           <Button
