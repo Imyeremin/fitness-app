@@ -65,13 +65,13 @@ function MainMenu({ setHeader, name, ...props }) {
               Питание
             </Button>
             <Button
-              onClick={() => onOpenPage("Тренеровки")}
+              onClick={() => onOpenPage("Тренировки")}
               as={Link}
               to="/coaching"
               className="p-3 fw-bold fs-5"
               variant="light"
             >
-              Тренеровки
+              Тренировки
             </Button>
           </div>
           <div className="d-flex align-items-center">

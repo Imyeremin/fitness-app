@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import styled, { keyframes } from "styled-components";
 import { Button, Container } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-import bg from "./bg.mp4";
+import bg from "./video/bg.mp4";
 import CardWork from "./CardWork";
 import { useDispatch, useSelector } from "react-redux";
 import Resault from "./Resault";
@@ -10,13 +10,12 @@ import { addRes } from "../../../../store/resaultSlise";
 
 const TimerWrapper = styled.video`
   position: absolute;
- width: auto;
+  width: 100%;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
   z-index: 1;
-  height:auto;
 `;
 
 const GlassCard = styled.div`
@@ -46,7 +45,7 @@ const glow = keyframes`
 `;
 
 const TimerDisplay = styled.div`
-  font-size: 150px;
+  font-size: 120px;
   font-size: 8rem; /* Большой размер шрифта */
   font-weight: bold;
   font-family: "Roboto Mono", monospace; /* Стильный моноширинный шрифт */
@@ -58,11 +57,10 @@ const TimerDisplay = styled.div`
 
 const StyledButton = styled(Button)`
   padding: 20px 50px;
-  margin: 0 20px;
 `;
 
 const DivContainer = styled.div`
-  margin-top: 10%;
+  margin-top: 5%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -133,14 +131,7 @@ const Timer = () => {
           ))}
         </ContainerCards>
         <GlassCard>
-          <h1
-            style={{
-              fontSize: "3rem",
-              marginBottom: "30px",
-              color: "#fff",
-              textShadow: "0px 0px 10px #fff",
-            }}
-          ></h1>
+          
           <TimerDisplay>{formatTime(time)}</TimerDisplay>
           <div>
             <StyledButton
@@ -155,7 +146,7 @@ const Timer = () => {
               handleShow={handleShow}
               show={show}
             />
-          </div>{" "}
+          </div>
         </GlassCard>
       </DivContainer>
     </div>

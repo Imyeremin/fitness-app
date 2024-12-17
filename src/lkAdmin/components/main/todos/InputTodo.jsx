@@ -41,10 +41,10 @@ const InputTodo = () => {
           +
         </Button>
       </div>
-      <div className="d-flex flex-column flex-end">
+      <div className="d-flex flex-column flex-end align-items-center">
         <InputGroup size="sm" className="mb-3">
           <InputGroup.Text
-            className="bg-secondary text-light"
+            className="bg-secondary text-light w-25"
             id="inputGroup-sizing-sm"
           >
             Задача
@@ -58,7 +58,7 @@ const InputTodo = () => {
         </InputGroup>
         <InputGroup size="sm" className="mb-3">
           <InputGroup.Text
-            className="bg-secondary text-light"
+            className="bg-secondary text-light w-25"
             id="inputGroup-sizing-sm"
           >
             Дата
@@ -71,14 +71,12 @@ const InputTodo = () => {
           />
         </InputGroup>
         <InputGroup>
-          <InputGroup.Text className="bg-secondary text-light">
-            Описание
-          </InputGroup.Text>
           <Form.Control
             value={data.desc}
             onChange={(e) => handleChange(e.target.value, "desc")}
             as="textarea"
             aria-label="With textarea"
+            placeholder="Описание"
           />
         </InputGroup>
       </div>

@@ -92,7 +92,7 @@ function FormNewNutrition() {
           placeholder="Углеводы"
         />
       </Form.Group>
-      <Button onClick={onAddDish} variant="outline-success">
+      <Button onClick={onAddDish} variant="success">
         Добавить блюдо
       </Button>
     </>

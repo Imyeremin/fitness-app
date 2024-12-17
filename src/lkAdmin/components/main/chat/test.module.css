@@ -1,4 +1,4 @@
-@property --g-1 {
+/* @property --g-1 {
     syntax: "<percentage>";
     inherits: false;
     initial-value: 0%;
@@ -32,7 +32,7 @@
     syntax: "<percentage>";
     inherits: false;
     initial-value: 500.17%;
-}
+} */
 
 .background {
     box-shadow: 1px 0px 50px 0px rgba(255, 255, 255, 1);

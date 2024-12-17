@@ -2,13 +2,13 @@ import ListGroup from "react-bootstrap/ListGroup";
 import styled from "styled-components";
 
 const DivListWorks = styled.div`
-  width: 50%;
+  width: 60%;
   margin: 20px;
   border-radius: 18px;
   border: 2px solid black;
   overflow-y: scroll;
   scrollbar-width: none;
-  height: 84%;
+  height: 75%;
 `;
 
 const BtnWorks = styled.button`

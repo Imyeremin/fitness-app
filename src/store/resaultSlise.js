@@ -5,7 +5,7 @@ const resaultSlice = createSlice({
   initialState: {
     resault: [
       {
-        id: 1,
+        id: 12312,
         name: "Екатерина Иванова",
         time: "23:32",
         work: [

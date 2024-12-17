@@ -7,17 +7,17 @@ const messagesSlice = createSlice({
       {
         name: "Иванова Екатерина",
         date: new Date().toISOString(),
-        text: "Привет трнеровкам",
+        text: "Привет тренировкам",
       },
       {
         name: "Иванова Екатерина",
         date: new Date().toISOString(),
-        text: "Привет трнеровкам",
+        text: "Привет тренировкам",
       },
       {
         name: "Иванова Екатерина",
         date: new Date().toISOString(),
-        text: "Привет трнеровкам",
+        text: "Привет тренировкам",
       },
     ],
   },

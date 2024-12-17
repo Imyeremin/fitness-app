@@ -41,8 +41,8 @@ function FormAddExercise() {
           aria-label="Default select example"
         >
           <option>Группа мышц...</option>
-          <option value="Ноги">Упражнение на руки</option>
-          <option value="Руки">Упражнение на ноги</option>
+          <option value="Ноги">Упражнение на ноги</option>
+          <option value="Руки">Упражнение на руки</option>
           <option value="Спина">Упражнение на спину</option>
         </Form.Select>
       </Form.Group>
@@ -83,7 +83,7 @@ function FormAddExercise() {
           placeholder=""
         />
       </Form.Group>
-      <Button onClick={onAddExercise} variant="outline-success">
+      <Button onClick={onAddExercise} variant="success">
         Добавить упражнение
       </Button>
     </>

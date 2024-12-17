@@ -12,7 +12,6 @@ import NutriCard from "./nutrotionCard/NutriCard";
 import UpdateProfile from "./UpdateProfile";
 import { Link } from "react-router-dom";
 
-
 // Фон с градиентом
 const GradientBackground = styled.div`
   background: linear-gradient(45deg, #ff9a8b, #ff6a88, #ff99ac);
@@ -109,12 +108,12 @@ function ProfileCard({ data }) {
                 </Accordion.Item>
               </Accordion>
               <p className="p-0 m-0 mt-1">
-                +1-386-575-1232{" "}
-                <span style={{ color: "green" }}>Available</span>
+                Для начала нажмите кнопку
+                <span style={{ color: "green" }}> "Поехали!"</span>
               </p>
               <p className="p-0 m-0">
-                +1-844-699-4678{" "}
-                <span style={{ color: "red" }}>Not Available</span>
+                <span style={{ color: "red" }}> "Внимание!" </span>Тренеровку
+                нельзя начать заново.
               </p>
               <Button as={Link} to="/time" variant="danger" className="mt-2">
                 Поехали!
@@ -138,10 +137,11 @@ function ProfileCard({ data }) {
                 </Accordion.Item>
               </Accordion>
               <p className="p-0 m-0 mt-1">
-                +1-386-575-1232 - <span style={{ color: "green" }}>Paid</span>
+                Для достежения резултата
+                <span style={{ color: "green" }}> соблюдайте рацион.</span>
               </p>
               <p className="p-0 m-0">
-                +1-549-746-1365 - <span style={{ color: "red" }}>Not Paid</span>
+                <span style={{ color: "red" }}>"Строго"</span> соблюдайте план.
               </p>
             </Card.Body>
           </StyledCard>

@@ -36,7 +36,7 @@ function CardCast({ castomer, openCloseWork, openCloseNutriion }) {
               <td>{castomer.tel}</td>
             </tr>
             <tr>
-              <th scope="row">Возрст:</th>
+              <th scope="row">Возраст:</th>
               <td>{castomer.age}</td>
             </tr>
             <tr>
@@ -60,7 +60,7 @@ function CardCast({ castomer, openCloseWork, openCloseNutriion }) {
           </Card.Text>
           <Card.Text className="d-flex">
             <Button onClick={openCloseWork} className="m-1" variant="primary">
-              Добавить тренеровку
+              Добавить тренировку
             </Button>
             <Button
               onClick={openCloseNutriion}
